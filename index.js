@@ -1,77 +1,77 @@
-const races = ['BHR', 'SAU', 'AUS', 'EMI', 'MIA', 'ESP', 'MON', 'AZE', 'CAN', 'GBR', 'AUT', 'FRA', 'HUN', 'BEL', 'NED', 'ITA', 'SIN', 'JPN', 'USA', 'MXC', 'SAP', 'ABU']
+const races = ['BHR', 'SAU', 'AUS', 'AZE', 'MIA', 'MON', 'ESP', 'CAN', 'AUT', 'GBR', 'HUN', 'BEL', 'NED', 'ITA', 'SIN', 'JPN', 'QAT', 'USA', 'MXC', 'SAP', 'LVG', 'ABU']
 const sprintRaces = new Set()
-sprintRaces.add('EMI')
+sprintRaces.add('AZE')
 sprintRaces.add('AUT')
+sprintRaces.add('BEL')
+sprintRaces.add('QAT')
+sprintRaces.add('USA')
 sprintRaces.add('SAP')
 
 const results = {
     'BHR': {
-        standings: ['LEC', 'SAI', 'HAM', 'RUS', 'MAG', 'BOT', 'OCO', 'TSU', 'ALO', 'ZHO', 'MSC', 'STR', 'ALB', 'RIC', 'NOR', 'LAT', 'HUL', 'PER', 'VER'],
-        dnf: ['GAS'],
-        fastest: 'LEC',
+        standings: ['VER', 'PER', 'ALO', 'SAI', 'HAM', 'STR', 'RUS', 'BOT', 'GAS', 'ALB', 'TSU', 'SAR', 'MAG', 'DEV', 'HUL', 'ZHO', 'NOR'],
+        dnf: ['OCO', 'LEC', 'PIA'],
+        fastest: 'ZHO',
     },
     'SAU': {
-        standings: ['VER', 'LEC', 'SAI', 'PER', 'RUS', 'OCO', 'NOR', 'GAS', 'MAG', 'HAM', 'ZHO', 'HUL', 'STR', 'ALB'],
-        dnf: ['BOT', 'ALO', 'RIC', 'LAT', 'TSU', 'MSC'],
-        fastest: 'LEC',
+        standings: ['PER', 'VER', 'ALO', 'RUS', 'HAM', 'SAI', 'LEC', 'OCO', 'GAS', 'MAG', 'TSU', 'HUL', 'ZHO', 'DEV', 'PIA', 'SAR', 'NOR', 'BOT'],
+        dnf: ['ALB', 'STR'],
+        fastest: 'VER',
     },
     'AUS': {
-        standings: ['LEC', 'PER', 'RUS', 'HAM', 'NOR', 'RIC', 'OCO', 'BOT', 'GAS', 'ALB', 'ZHO', 'STR', 'MSC', 'MAG', 'TSU', 'LAT', 'ALO'],
-        dnf: ['VER', 'VET', 'SAI'],
-        fastest: 'LEC',
-    },
-    'EMI': {
-        sprint: ['VER', 'LEC', 'PER', 'SAI', 'NOR', 'RIC', 'BOT', 'MAG', 'ALO', 'MSC', 'RUS', 'TSU', 'VET', 'HAM', 'STR', 'OCO', 'GAS', 'ALB', 'LAT'],
-        sprintdnf: ['ZHO'],
-        standings: ['VER', 'PER', 'NOR', 'RUS', 'BOT', 'LEC', 'TSU', 'VET', 'MAG', 'STR', 'ALB', 'GAS', 'HAM', 'OCO', 'ZHO', 'LAT', 'MSC', 'RIC'],
-        dnf: ['ALO', 'SAI'],
-        fastest: 'VER',
-    },
-    'MIA': {
-        standings: ['VER', 'LEC', 'SAI', 'PER', 'RUS', 'HAM', 'BOT', 'OCO', 'ALB', 'STR', 'ALO', 'TSU', 'RIC', 'LAT', 'MSC', 'MAG', 'VET'],
-        dnf: ['GAS', 'NOR', 'ZHO'],
-        fastest: 'VER',
-    },
-    'ESP': {
-        standings: ['VER', 'PER', 'RUS', 'SAI', 'HAM', 'BOT', 'OCO', 'NOR', 'ALO', 'TSU', 'VET', 'RIC', 'GAS', 'MSC', 'STR', 'LAT', 'MAG', 'ALB'],
-        dnf: ['ZHO', 'LEC'],
+        standings: ['VER', 'HAM', 'ALO', 'STR', 'PER', 'NOR', 'HUL', 'PIA', 'ZHO', 'TSU', 'BOT', 'SAI'],
+        dnf: ['GAS', 'OCO', 'DEV', 'SAR', 'MAG', 'RUS', 'ALB', 'LEC'],
         fastest: 'PER',
-    },
-    'MON': {
-        standings: ['PER', 'SAI', 'VER', 'LEC', 'RUS', 'NOR', 'ALO', 'HAM', 'BOT', 'VET', 'GAS', 'OCO', 'RIC', 'STR', 'LAT', 'ZHO', 'TSU'],
-        dnf: ['ALB', 'MSC', 'MAG'],
-        fastest: 'NOR',
     },
     'AZE': {
-        standings: ['VER', 'PER', 'RUS', 'HAM', 'GAS', 'VET', 'ALO', 'RIC', 'NOR', 'OCO', 'BOT', 'ALB', 'TSU', 'MSC', 'LAT', 'STR'],
-        dnf: ['MAG', 'ZHO', 'LEC', 'SAI'],
-        fastest: 'PER',
+        sprint: ['PER', 'LEC', 'VER', 'RUS', 'SAI', 'ALO', 'HAM', 'STR', 'ALB', 'PIA', 'MAG', 'ZHO', 'GAS', 'DEV', 'HUL', 'BOT', 'NOR', 'OCO'],
+        sprintdnf: ['TSU'],
+        standings: ['PER', 'VER', 'LEC', 'ALO', 'SAI', 'HAM', 'STR', 'RUS', 'NOR', 'TSU', 'PIA', 'ALB', 'MAG', 'GAS', 'OCO', 'SAR', 'HUL', 'BOT'],
+        dnf: ['ZHO', 'DEV'],
+        fastest: 'RUS',
     },
-    'CAN': {
-        standings: ['VER', 'SAI', 'HAM', 'RUS', 'LEC', 'OCO', 'BOT', 'ZHO', 'ALO', 'STR', 'RIC', 'VET', 'ALB', 'GAS', 'NOR', 'LAT', 'MAG'],
-        dnf: ['TSU', 'MSC', 'PER'],
-        fastest: 'SAI',
-    },
-    'GBR': {
-        standings: ['SAI', 'PER', 'HAM', 'LEC', 'ALO', 'NOR', 'VER', 'MSC', 'VET', 'MAG', 'STR', 'LAT', 'RIC', 'TSU'],
-        dnf: ['OCO', 'GAS', 'BOT', 'RUS', 'ZHO', 'ALB'],
-        fastest: 'HAM',
-    },
-    'AUT': {
-        sprint: ['VER', 'LEC', 'SAI', 'RUS', 'PER', 'OCO', 'MAG', 'HAM', 'MSC', 'BOT', 'NOR', 'RIC', 'STR', 'ZHO', 'GAS', 'ALB', 'TSU', 'LAT'],
-        sprintdnf: ['VET', 'ALO'],
-        standings: ['LEC', 'VER', 'HAM', 'RUS', 'OCO', 'MSC', 'NOR', 'MAG', 'RIC', 'ALO', 'BOT', 'ALB', 'STR', 'ZHO', 'GAS', 'TSU', 'VET'],
-        dnf: ['SAI', 'LAT', 'PER'],
+    'MIA': {
+        standings: ['VER', 'PER', 'ALO', 'RUS', 'SAI', 'HAM', 'LEC', 'GAS', 'OCO', 'MAG', 'TSU', 'STR', 'BOT', 'ALB', 'HUL', 'ZHO', 'NOR', 'DEV', 'PIA', 'SAR'],
+        dnf: [],
         fastest: 'VER',
     },
-    'FRA': {
-        standings: ['VER', 'HAM', 'RUS', 'PER', 'SAI', 'ALO', 'NOR', 'OCO', 'RIC', 'STR', 'VET', 'GAS', 'ALB', 'BOT', 'MSC', 'ZHO'],
-        dnf: ['LAT', 'MAG', 'LEC', 'TSU'],
-        fastest: 'SAI'
+    'MON': {
+        standings: ['VER', 'ALO', 'OCO', 'HAM', 'RUS', 'LEC', 'GAS', 'SAI', 'NOR', 'PIA', 'BOT', 'DEV', 'ZHO', 'ALB', 'TSU', 'PER', 'HUL', 'SAR'],
+        dnf: ['MAG', 'STR'],
+        fastest: 'HAM',
+    },
+    'ESP': {
+        standings: ['VER', 'HAM', 'RUS', 'PER', 'SAI', 'STR', 'ALO', 'OCO', 'ZHO', 'GAS', 'LEC', 'TSU', 'PIA', 'DEV', 'HUL', 'ALB', 'NOR', 'MAG', 'BOT', 'SAR'],
+        dnf: [],
+        fastest: 'VER',
+    },
+    'CAN': {
+        standings: ['VER', 'ALO', 'HAM', 'LEC', 'SAI', 'PER', 'ALB', 'OCO', 'STR', 'BOT', 'PIA', 'GAS', 'NOR', 'TSU', 'HUL', 'ZHO', 'MAG', 'DEV'],
+        dnf: ['RUS', 'SAR'],
+        fastest: 'PER',
+    },
+    'AUT': {
+        sprint: ['VER', 'PER', 'SAI', 'STR', 'ALO', 'HUL', 'OCO', 'RUS', 'NOR', 'HAM', 'PIA', 'LEC', 'ALB', 'MAG', 'GAS', 'TSU', 'DEV', 'SAR', 'ZHO', 'BOT'],
+        sprintdnf: [],
+        standings: ['VER', 'LEC', 'PER', 'NOR', 'ALO', 'SAI', 'RUS', 'HAM', 'STR', 'GAS', 'ALB', 'ZHO', 'SAR', 'OCO', 'BOT', 'PIA', 'DEV', 'MAG', 'TSU'],
+        dnf: ['HUL'],
+        fastest: 'VER',
+    },
+    'GBR': {
+        standings: ['VER', 'NOR', 'HAM', 'PIA', 'RUS', 'PER', 'ALO', 'ALB', 'LEC', 'SAI', 'SAR', 'BOT', 'HUL', 'STR', 'ZHO', 'TSU', 'DEV'],
+        dnf: ['GAS', 'MAG', 'OCO'],
+        fastest: 'VER',
     },
     'HUN': {
-        standings: ['VER', 'HAM', 'RUS', 'SAI', 'PER', 'LEC', 'NOR', 'ALO', 'OCO', 'VET', 'STR', 'GAS', 'ZHO', 'MSC', 'RIC', 'MAG', 'ALB', 'LAT', 'TSU', 'BOT'],
-        dnf: [],
+        standings: ['VER', 'NOR', 'PER', 'HAM', 'PIA', 'RUS', 'LEC', 'SAI', 'ALO', 'STR', 'ALB', 'BOT', 'RIC', 'HUL', 'TSU', 'ZHO', 'MAG'],
+        dnf: ['SAR', 'OCO', 'GAS'],
+        fastest: 'VER',
+    },
+    'BEL': {
+        sprint: ['VER', 'PIA', 'GAS', 'SAI', 'LEC', 'NOR', 'HAM', 'RUS', 'OCO', 'RIC', 'STR', 'ALB', 'BOT', 'MAG', 'ZHO', 'SAR', 'HUL', 'TSU'],
+        sprintdnf: ['PER', 'ALO'],
+        standings: ['VER', 'PER', 'LEC', 'HAM', 'ALO', 'RUS', 'NOR', 'OCO', 'STR', 'TSU', 'GAS', 'BOT', 'ZHO', 'ALB', 'MAG', 'RIC', 'SAR', 'HUL'],
+        dnf: ['SAI', 'PIA'],
         fastest: 'HAM',
     },
 }
@@ -95,24 +95,24 @@ const sprintPoints = [8, 7, 6, 5, 4, 3, 2, 1]
 const currDrivers = new Set()
 currDrivers.add('ZHO')
 currDrivers.add('BOT')
-currDrivers.add('GAS')
+currDrivers.add('RIC')
 currDrivers.add('TSU')
-currDrivers.add('ALO')
+currDrivers.add('GAS')
 currDrivers.add('OCO')
-currDrivers.add('VET')
+currDrivers.add('ALO')
 currDrivers.add('STR')
 currDrivers.add('LEC')
 currDrivers.add('SAI')
 currDrivers.add('MAG')
-currDrivers.add('MSC')
-currDrivers.add('RIC')
+currDrivers.add('HUL')
+currDrivers.add('PIA')
 currDrivers.add('NOR')
 currDrivers.add('HAM')
 currDrivers.add('RUS')
 currDrivers.add('VER')
 currDrivers.add('PER')
 currDrivers.add('ALB')
-currDrivers.add('LAT')
+currDrivers.add('SAR')
 
 const drivers = {
     'ZHO': {
@@ -129,8 +129,15 @@ const drivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'GAS': {
-        name: 'Pierre Gasly',
+    'DEV': {
+        name: 'Nyck de Vries',
+        team: 'AlphaTauri',
+        points: 0,
+        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        raceResults: {},
+    },
+    'RIC': {
+        name: 'Daniel Ricciardo',
         team: 'AlphaTauri',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -143,8 +150,8 @@ const drivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'ALO': {
-        name: 'Fernando Alonso',
+    'GAS': {
+        name: 'Pierre Gasly',
         team: 'Alpine',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -157,15 +164,8 @@ const drivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'HUL': {
-        name: 'Nico Hulkenberg',
-        team: 'Aston Martin',
-        points: 0,
-        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        raceResults: {},
-    },
-    'VET': {
-        name: 'Sebastian Vettel',
+    'ALO': {
+        name: 'Fernando Alonso',
         team: 'Aston Martin',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -199,22 +199,22 @@ const drivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'MSC': {
-        name: 'Mick Schumacher',
+    'HUL': {
+        name: 'Nico Hulkenberg',
         team: 'Haas',
-        points: 0,
-        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        raceResults: {},
-    },
-    'RIC': {
-        name: 'Daniel Ricciardo',
-        team: 'McLaren',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
     'NOR': {
         name: 'Lando Norris',
+        team: 'McLaren',
+        points: 0,
+        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        raceResults: {},
+    },
+    'PIA': {
+        name: 'Oscar Piastri',
         team: 'McLaren',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -248,8 +248,8 @@ const drivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'LAT': {
-        name: 'Nicholas Latifi',
+    'SAR': {
+        name: 'Logan Sargeant',
         team: 'Williams',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -342,8 +342,15 @@ const originalDrivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'GAS': {
-        name: 'Pierre Gasly',
+    'DEV': {
+        name: 'Nyck de Vries',
+        team: 'AlphaTauri',
+        points: 0,
+        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        raceResults: {},
+    },
+    'RIC': {
+        name: 'Daniel Ricciardo',
         team: 'AlphaTauri',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -356,8 +363,8 @@ const originalDrivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'ALO': {
-        name: 'Fernando Alonso',
+    'GAS': {
+        name: 'Pierre Gasly',
         team: 'Alpine',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -370,15 +377,8 @@ const originalDrivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'HUL': {
-        name: 'Nico Hulkenberg',
-        team: 'Aston Martin',
-        points: 0,
-        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        raceResults: {},
-    },
-    'VET': {
-        name: 'Sebastian Vettel',
+    'ALO': {
+        name: 'Fernando Alonso',
         team: 'Aston Martin',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -412,22 +412,22 @@ const originalDrivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'MSC': {
-        name: 'Mick Schumacher',
+    'HUL': {
+        name: 'Nico Hulkenberg',
         team: 'Haas',
-        points: 0,
-        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        raceResults: {},
-    },
-    'RIC': {
-        name: 'Daniel Ricciardo',
-        team: 'McLaren',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
     'NOR': {
         name: 'Lando Norris',
+        team: 'McLaren',
+        points: 0,
+        placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        raceResults: {},
+    },
+    'PIA': {
+        name: 'Oscar Piastri',
         team: 'McLaren',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -461,8 +461,8 @@ const originalDrivers = {
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         raceResults: {},
     },
-    'LAT': {
-        name: 'Nicholas Latifi',
+    'SAR': {
+        name: 'Logan Sargeant',
         team: 'Williams',
         points: 0,
         placements: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -1049,56 +1049,50 @@ for (let i = 0; i < races.length; i++) {
 
     raceDiv.appendChild(outerRaceDiv)
 
-    // AM Driver Selector
+    // AT Driver Selector
 
-    const AMDriverContainer = document.createElement('div')
-    AMDriverContainer.classList = 'flex flex-col items-center justify-center'
+    const ATDriverContainer = document.createElement('div')
+    ATDriverContainer.classList = 'flex flex-col items-center justify-center'
 
-    const AMDriverLabel = document.createElement('label')
-    AMDriverLabel.innerHTML = 'DNP AM Driver<sup>?</sup>'
-    AMDriverLabel.title = 'Select the Aston Martin driver that did not race'
-    AMDriverLabel.classList = 'mr-2 mt-1 text-xs'
+    const ATDriverLabel = document.createElement('label')
+    ATDriverLabel.innerHTML = 'DNS AT Driver<sup>?</sup>'
+    ATDriverLabel.title = 'Select the AlphaTauri Driver that Did Not Start'
+    ATDriverLabel.classList = 'mr-2 mt-1 text-xs'
 
-    AMDriverContainer.appendChild(AMDriverLabel)
+    ATDriverContainer.appendChild(ATDriverLabel)
 
-    AMDriverInput = document.createElement('div')
-    AMDriverInput.classList = 'flex flex-col text-xs'
-    AMDriverInput.innerHTML = `
+    const ATDriverInput = document.createElement('div')
+    ATDriverInput.classList = 'flex flex-col text-xs'
+    ATDriverInput.innerHTML = `
     <div>
-        <input type="radio" id="race${races[i]}_VET" name="race${races[i]}_AMDriver" value="VET" onchange="changeAMDriver('race${races[i]}', 'VET')">
-        <label for="race${races[i]}_VET">VET</label>
+        <input type="radio" id="race${races[i]}_DEV" name="race${races[i]}_ATDriver" value="DEV" onchange="changeATDriver('race${races[i]}', 'DEV')">
+        <label for="race${races[i]}_DEV">DEV</label>
     </div>
     <div>
-        <input type="radio" id="race${races[i]}_STR" name="race${races[i]}_AMDriver" value="STR" onchange="changeAMDriver('race${races[i]}', 'STR')">
-        <label for="race${races[i]}_STR">STR</label>
-    </div>
-    <div>
-        <input type="radio" id="race${races[i]}_HUL" name="race${races[i]}_AMDriver" value="HUL" onchange="changeAMDriver('race${races[i]}', 'HUL')">
-        <label for="race${races[i]}_HUL">HUL</label>
+        <input type="radio" id="race${races[i]}_RIC" name="race${races[i]}_ATDriver" value="RIC" onchange="changeATDriver('race${races[i]}', 'RIC')">
+        <label for="race${races[i]}_RIC">RIC</label>
     </div>
     `
-    const AMDriverSet = new Set()
-    AMDriverSet.add('VET')
-    AMDriverSet.add('STR')
-    AMDriverSet.add('HUL')
+    const ATDriverSet = new Set()
+    ATDriverSet.add('DEV')
+    ATDriverSet.add('RIC')
 
     const driverList = raceDriverContainer.querySelectorAll(`.race${races[i]}`)
 
     for (let j = 0; j < driverList.length; j++) {
-        if (AMDriverSet.has(driverList[j].innerHTML)) {
-            AMDriverSet.delete(driverList[j].innerHTML)
+        if (ATDriverSet.has(driverList[j].innerHTML)) {
+            ATDriverSet.delete(driverList[j].innerHTML)
         }
-        if (AMDriverSet.size === 1) break
+        if (ATDriverSet.size === 1) break
     }
 
-    for (const item of AMDriverSet) {
-        AMDriverInput.querySelector(`#${`race${races[i]}`}_${item}`).checked = true
-        break
-    }
+    ATDriverSet.forEach(item => {
+        ATDriverInput.querySelector(`#${`race${races[i]}`}_${item}`).checked = true
+    })
 
-    AMDriverContainer.appendChild(AMDriverInput)
+    ATDriverContainer.appendChild(ATDriverInput)
 
-    raceDiv.appendChild(AMDriverContainer)
+    raceDiv.appendChild(ATDriverContainer)
 
     const includeRaceContainer = document.createElement('div')
     includeRaceContainer.classList = 'flex flex-row items-center justify-center'
@@ -2052,27 +2046,24 @@ function deselectAllTeams() {
     teamStandingsChart.update()
 }
 
-function changeAMDriver(raceName, driver) {
+function changeATDriver(raceName, driver) {
     const driverLocations = {}
-    const AMDriverSet = new Set()
-    AMDriverSet.add('VET')
-    AMDriverSet.add('STR')
-    AMDriverSet.add('HUL')
+    const ATDriverSet = new Set()
+    ATDriverSet.add('DEV')
+    ATDriverSet.add('RIC')
 
     if (sprintRaces.has(raceName.substring(raceName.length-3))) {
         const driverList = document.querySelectorAll(`.${raceName}sprint`)
 
         for (let j = 0; j < driverList.length; j++) {
-            if (AMDriverSet.has(driverList[j].innerHTML)) {
-                AMDriverSet.delete(driverList[j].innerHTML)
+            if (ATDriverSet.has(driverList[j].innerHTML)) {
+                ATDriverSet.delete(driverList[j].innerHTML)
                 driverLocations[driverList[j].innerHTML] = j
             }
-            if (AMDriverSet.size === 1) break
+            if (ATDriverSet.size === 1) break
         }
 
-        for (const item of AMDriverSet) {
-            if (item === driver) break // shouldnt happen but just in case?
-
+        ATDriverSet.forEach(item => {
             driverList[driverLocations[driver]].innerHTML = item
 
             if (document.getElementById(`${raceName}_includeRace`).checked) {
@@ -2083,28 +2074,23 @@ function changeAMDriver(raceName, driver) {
 
                 drivers[item].raceResults[raceName.substring(raceName.length-3)] = { sprintResult: driverLocations[driver] + 1 }
             }
-
-            break
-        }
+        })
     }
 
-    AMDriverSet.add('VET')
-    AMDriverSet.add('STR')
-    AMDriverSet.add('HUL')
+    ATDriverSet.add('DEV')
+    ATDriverSet.add('RIC')
 
     const driverList = document.querySelectorAll(`.${raceName}`)
 
     for (let j = 0; j < driverList.length; j++) {
-        if (AMDriverSet.has(driverList[j].innerHTML)) {
-            AMDriverSet.delete(driverList[j].innerHTML)
+        if (ATDriverSet.has(driverList[j].innerHTML)) {
+            ATDriverSet.delete(driverList[j].innerHTML)
             driverLocations[driverList[j].innerHTML] = j
         }
-        if (AMDriverSet.size === 1) break
+        if (ATDriverSet.size === 1) break
     }
 
-    for (const item of AMDriverSet) {
-        if (item === driver) break // shouldnt happen but just in case?
-
+    ATDriverSet.forEach(item => {
         driverList[driverLocations[driver]].innerHTML = item
 
         if (!document.getElementById(`${raceName}_includeRace`).checked) {
@@ -2144,9 +2130,7 @@ function changeAMDriver(raceName, driver) {
             teams[drivers[driver].team].raceResults[raceName.substring(raceName.length-3)][item][key] = teams[drivers[driver].team].raceResults[raceName.substring(raceName.length-3)][driver][key]
         }
         delete teams[drivers[driver].team].raceResults[raceName.substring(raceName.length-3)][driver]
-
-        break
-    }
+    })
 
     sortScoreboard()
     recreateTables()
